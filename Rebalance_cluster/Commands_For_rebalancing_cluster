@@ -1,0 +1,39 @@
+
+Step 1:
+
+Create a Json file with information about the topics to move to the new Brokers.
+
+Step 2:
+
+./kafka-reassign-partitions.sh  --zookeeper <zookeeper ip:port> --topics-to-move-json-file <filepath/filename> --broker-list <All the broker id where the topics to be moved> --generate
+
+Example:
+
+./kafka-reassign-partitions.sh  --zookeeper localhost:2181 --topics-to-move-json-file ../topics-to-move-json.json --broker-list "101,102,103,104,105" --generate
+
+
+Step 3:
+
+It will generate a new partitions assignment plan and current assigned plan (incase of rollback).
+We can take the new proposed plan and keep it in a new Json file.This new assignments can be modifiable for our needs.
+
+
+Step 4
+
+./kafka-reassign-partitions.sh  --zookeeper <zookeeper ip:port> --reassignment-json-file < New reassign-partitions Json file> --execute
+
+Example:
+
+./kafka-reassign-partitions.sh  --zookeeper localhost:2181 --reassignment-json-file ../reassign_partitions.json --execute
+
+Step 5:
+
+This process can be verified by the below command
+
+./kafka-reassign-partitions.sh  --zookeeper localhost:2181 --reassignment-json-file ../reassign_partitions.json --verify
+
+Step 6:
+
+If the Process completed successfully.It can be checked by describing the topics.
+
+
