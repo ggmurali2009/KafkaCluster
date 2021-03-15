@@ -1,0 +1,1 @@
+/home/muralimanoj/Desktop/kafka/bin/kafka-server-start.sh /home/muralimanoj/Desktop/kafka/config/use_case_2/cluster1/server3.properties

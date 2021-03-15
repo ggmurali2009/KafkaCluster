@@ -1,0 +1,1 @@
+/home/muralimanoj/Desktop/kafka/bin/kafka-server-stop.sh

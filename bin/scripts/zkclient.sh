@@ -1,0 +1,1 @@
+/home/muralimanoj/Desktop/apache-zookeeper-3.6.1-bin/bin/zkCli.sh
